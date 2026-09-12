@@ -15,17 +15,25 @@ const issueSchema = new mongoose.Schema(
     duplicateOf: { type: mongoose.Schema.Types.ObjectId, ref: "Issue", default: null },
     aiRationale: { type: String, default: "" },
     aiConfidence: { type: Number, min: 0, max: 1, default: null },
-    department: { type: String, default: "Pending assignment" },
-    status: {
+
+    // Functional routing — now structured instead of a free-text label
+    department: {
       type: String,
       enum: [
-        "Reported",
-        "Analyzed",
-        "Assigned",
-        "In progress",
-        "Resolved",
-        "Verified",
+        "Public Works",
+        "Water & Sewerage",
+        "Sanitation",
+        "Electrical",
+        "Traffic & Transport",
+        "General Civic Services",
       ],
+      default: "General Civic Services",
+    },
+    subDepartment: { type: String, default: null },
+
+    status: {
+      type: String,
+      enum: ["Reported", "Analyzed", "Assigned", "In progress", "Resolved", "Verified"],
       default: "Reported",
     },
     ward: { type: String, default: "Ward 14" },
@@ -42,6 +50,19 @@ const issueSchema = new mongoose.Schema(
       enum: ["Awaiting", "Confirmed", "Reopened"],
       default: "Awaiting",
     },
+
+    // Accountability chain
+    assignedAuthorityId: { type: mongoose.Schema.Types.ObjectId, ref: "User", default: null },
+    slaDeadline: { type: Date, default: null },
+    // 0 = original officer, 1 = dept head, 2 = zone authority, 3 = municipal admin
+    escalationLevel: { type: Number, min: 0, max: 3, default: 0 },
+    escalationHistory: [
+      {
+        level: Number,
+        authorityId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+        escalatedAt: { type: Date, default: Date.now },
+      },
+    ],
   },
   { timestamps: true },
 );
