@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 bg-paper font-sans text-ink;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+  button {
+    @apply transition;
+  }
+}
+@layer components {
+  .card {
+    @apply rounded-[14px] border border-[#e7ebf2] bg-white shadow-card;
+  }
+  .nav-item {
+    @apply flex w-full items-center gap-3 rounded-[10px] px-3 py-2.5 text-left text-[13px] font-semibold text-[#b6c1d9] hover:bg-[linear-gradient(90deg,rgba(91,110,255,.36),rgba(91,110,255,.06))] hover:text-white;
+  }
+  .nav-item.active {
+    @apply bg-[linear-gradient(90deg,rgba(91,110,255,.36),rgba(91,110,255,.06))] text-white;
+  }
+  .primary {
+    @apply rounded-[9px] bg-gradient-to-br from-brand to-[#5d51dc] px-4 py-2.5 text-sm font-bold text-white shadow-[0_6px_14px_#d2d6ff] hover:brightness-105;
+  }
+  .ghost {
+    @apply rounded-[8px] border border-[#e7ebf2] bg-white px-3 py-2 text-[12px] font-bold text-[#58657b] hover:bg-[#fafbfe];
+  }
+  .badge {
+    @apply inline-flex whitespace-nowrap rounded-full px-2 py-1 text-[10px] font-extrabold;
+  }
+  .field {
+    @apply mb-4 block text-[12px] font-bold;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    @apply mt-1.5 w-full rounded-[9px] border border-[#dfe5ee] bg-white px-3 py-2.5 outline-none focus:border-[#8292f3] focus:ring-4 focus:ring-[#edf0ff];
+  }
+  .field textarea {
+    @apply h-28 resize-y;
+  }
+}
