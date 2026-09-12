@@ -187,4 +187,6 @@ router.get("/me", authenticate, loadCurrentUser, async (req, res) => {
   res.json(safeUser);
 });
 
+
+
 export default router;
