@@ -1,6 +1,7 @@
 const API_BASE = import.meta.env.VITE_API_URL || "";
 const ISSUES_API = `${API_BASE}/api/issues`;
 const USERS_API = `${API_BASE}/api/users`;
+const SESSION_KEY = "civicpulse-session";
 
 export function loadSession() {
   try {

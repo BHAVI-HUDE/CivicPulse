@@ -43,3 +43,10 @@ export function topHotspotWard(issues) {
   const [ward, count] = Object.entries(counts).sort((a, b) => b[1] - a[1])[0] || [null, 0];
   return { ward, count };
 }
+
+export function resolutionDuration(issue) {
+  if (!["Resolved", "Verified"].includes(issue.status) || !issue.createdAt || !issue.updatedAt) return null;
+  const hours = (new Date(issue.updatedAt) - new Date(issue.createdAt)) / 36e5;
+  if (hours < 24) return `${Math.round(hours)}h`;
+  return `${(hours / 24).toFixed(1)} days`;
+}

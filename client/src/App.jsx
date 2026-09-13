@@ -15,6 +15,7 @@ import Analysis from "./overlays/Analysis";
 import Notifications from "./overlays/Notifications";
 import Toast from "./components/Toast";
 import Approvals from "./pages/Approvals";
+import Feed from "./pages/Feed";
 
 const blankForm = { title: "", description: "", category: "", ward: "Ward 14", nearSchool: false };
 
@@ -155,6 +156,7 @@ export default function App() {
     queue: <Queue issues={issues} open={setDrawer} />,
     insights: <Insights issues={issues} tell={tell} />,
     approvals: <Approvals currentUser={session.user} token={session.token} tell={tell} />,
+    feed: <Feed issues={issues} />,
     // Fallback guards against an unreachable page id ever rendering a
     // blank main area (this used to happen for authority users clicking
     // the citizen-only "Create demo report" shortcut).

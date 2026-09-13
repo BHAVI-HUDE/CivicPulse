@@ -4,7 +4,7 @@ export default function Sidebar({ user, page, go }) {
   const authority = isAuthorityRole(user?.role);
   const items = authority
     ? [["command", "⌁", "Command center"], ["queue", "☷", "Priority queue"], ["insights", "◒", "City insights"],  ["approvals", "🛡️", "Approvals"],]
-    : [["dashboard", "▦", "Dashboard"], ["report", "＋", "Report an issue"], ["tracking", "◌", "My reports"]];
+    : [["dashboard", "▦", "Dashboard"], ["report", "＋", "Report an issue"], ["tracking", "◌", "My reports"], ["feed", "🌐", "Community feed"]];
 
   return (
     <aside className="hidden bg-navy px-3.5 py-5 text-[#b9c1d6] md:block">
