@@ -8,6 +8,8 @@ CivicPulse turns a citizen's report into a tracked, accountable civic work item.
 Built by **Team Koder** — Bhavi Hude, Devendra Choudhary, Manish Parmar, Vedish Sharma
 Samrat Ashok Technological Institute, Vidisha
 
+🔗 **Live Demo:** [CivicPulse](https://civic-pulse-psi-virid.vercel.app/)
+
 ---
 
 ## Why
@@ -143,3 +145,7 @@ CivicPulse/
 ## License
 
 Built for hackathon submission by Team Koder.
+
+---
+
+**Live:** [https://civic-pulse-psi-virid.vercel.app/](https://civic-pulse-psi-virid.vercel.app/)
