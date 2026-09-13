@@ -35,6 +35,14 @@ CivicPulse addresses all four with one pipeline: **Report → Analyze → Priori
 - **Citizen Resolution Verification** — citizens confirm or reopen an issue marked "Resolved," so status reflects reality, not just a department's claim
 - **JWT Authentication** — secure, role-aware auth across citizen and authority flows
 
+## Screenshots
+
+| | |
+|---|---|
+| ![Auth](./screenshots/01-auth-signup.jpeg) **Sign up / Login** — role-based account creation; citizens start reporting immediately, authority roles need approval | ![Dashboard](./screenshots/02-citizen-dashboard.jpeg) **Citizen Dashboard** — report summary, neighbourhood map, recent activity |
+| ![My Reports](./screenshots/03-my-reports.jpeg) **My Reports** — priority score, live status timeline (Reported → Analyzed → Assigned → In progress → Resolved → Verified), and resolution verification prompt | ![Community Feed](./screenshots/04-community-feed.jpeg) **Community Feed** — every issue reported city-wide, fully transparent, with live resolution rate |
+| ![Report an Issue](./screenshots/05-report-issue.jpeg) **Report an Issue** — description + AI classification + photo upload + interactive location pin | |
+
 ## Tech Stack
 
 | Layer | Technology |
